@@ -34,6 +34,6 @@ Messages with member emotes will display the emote shortcut text instead of the 
 ## Requirements 
 A computer running Windows is required to run the precompiled version in the releases section. Support for a precompiled version is planned for macOS down the line.
 
-You only need [pytchat 0.5.3](https://pypi.org/project/pytchat/) to run this successfully. A requirements.txt is included. Simply `pip install -r requirements.txt` to get all dependencies.
+If you'd like to run straight from source, just clone this repo and run chatchecker.py. Python 3.x is required. You'll only need [pytchat](https://pypi.org/project/pytchat/) to run this successfully. A requirements.txt is also included. Simply `pip install -r requirements.txt` to get all dependencies.
 
 This was made in Python 3.9.2.
