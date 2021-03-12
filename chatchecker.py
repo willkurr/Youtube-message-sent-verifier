@@ -4,6 +4,8 @@ import tkinter as tk
 import threading
 import time
 import os
+import tempfile
+import iconData
 
 #global to allow tracking of whether the checkChat thread should be running
 killThread = False
@@ -64,13 +66,17 @@ def ifNewMessage(*args):
     lbl_received["text"] = "Last message received at " + date
     lbl_received["bg"] = "#91FF81"
     #playsound("alert.mp3", False)
-    
+
+#parse the raw icon data to make an image, and store it temporarily 
+_, ICON_PATH = tempfile.mkstemp()
+with open(ICON_PATH, 'wb') as icon_file:
+    icon_file.write(iconData.ICON)
+
 #making the window
 window = tk.Tk()
 window.wm_attributes("-topmost", 1)
 window.title("YT Message Checker")
-window.iconbitmap(resource_path("youtubecheck.ico"))
-#window.iconbitmap("youtubecheck.ico")
+window.iconbitmap(ICON_PATH)
 
 #making frames to hold widgets
 frm_title = tk.Frame(master=window)
